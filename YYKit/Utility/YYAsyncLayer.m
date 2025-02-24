@@ -145,6 +145,7 @@ static dispatch_queue_t YYAsyncLayerGetReleaseQueue() {
                 CGColorRelease(backgroundColor);
                 return;
             }
+            if (self.bounds.size.width == 0 || self.bounds.size.height == 0) { return ; }
             UIGraphicsBeginImageContextWithOptions(size, opaque, scale);
             CGContextRef context = UIGraphicsGetCurrentContext();
             if (opaque && context) {
